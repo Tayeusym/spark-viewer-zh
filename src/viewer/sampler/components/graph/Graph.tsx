@@ -83,11 +83,9 @@ export default function Graph({
     return (
         <div className="graph">
             <div className="header">
-                <h2>Refine</h2>
+                <h2>优化</h2>
                 <p>
-                    The graph below shows some key metrics over the course of
-                    the profile. You can drag + select with your cursor to
-                    refine the profile to a specific time period.
+                    在下面的图标显示了配置文件（或实时数据）期间的一些关键指标。使用光标或拖动选择，以将配置文件细化到对应的时间段。
                 </p>
             </div>
 

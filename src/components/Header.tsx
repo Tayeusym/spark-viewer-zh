@@ -26,9 +26,9 @@ export function HomepageHeader() {
                 <div>
                     <h1>spark</h1>
                     <div>
-                        A performance profiler for Minecraft
+                        一个用于Minecraft的性能分析器
                         <br />
-                        clients, servers, and proxies.
+                        支持客户端、服务端以及代理。
                     </div>
                 </div>
             </div>

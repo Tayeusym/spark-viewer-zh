@@ -22,7 +22,7 @@ export default function LabelModeButton({
             <Button
                 value={labelMode}
                 setValue={setLabelMode}
-                title="Label"
+                title="标签"
                 labelTrue="Bytes per second"
                 labelFalse="Percentage"
             >
@@ -43,17 +43,15 @@ export default function LabelModeButton({
             <Button
                 value={labelMode}
                 setValue={setLabelMode}
-                title="Label"
-                labelTrue="Time per tick"
-                labelFalse="Percentage"
+                title="标签"
+                labelTrue="每刻时间"
+                labelFalse="百分比"
             >
                 <p>
-                    The value displayed against each frame is the average time
-                    in milliseconds spent executing the method each tick.
+                    每个帧上显示的值是每次执行方法时花费的平均毫秒数。
                 </p>
                 <p>
-                    The value displayed against each frame is the time divided
-                    by the total time as a percentage.
+                    每个帧上显示的值是时间除以总时间的百分比。
                 </p>
             </Button>
         );

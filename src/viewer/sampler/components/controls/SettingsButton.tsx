@@ -19,7 +19,7 @@ export default function SettingsButton({
         <FaButton
             icon={faSliders}
             onClick={onClick}
-            title="Click to show the settings menu"
+            title="点击以显示设置菜单"
             extraClassName={showSettings ? 'toggled' : undefined}
         />
     );

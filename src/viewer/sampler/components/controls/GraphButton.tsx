@@ -25,7 +25,7 @@ export default function GraphButton({
         <FaButton
             icon={faChartLine}
             onClick={onClick}
-            title="View the graph"
+            title="查看图表"
             extraClassName={showGraph ? 'toggled' : undefined}
         />
     );

@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import {
     Suspense,
     useCallback,
@@ -102,19 +103,18 @@ export default function SparkViewer() {
         case LOADING_DATA:
             return (
                 <TextBox>
-                    {code === '_' ? 'Loading file...' : 'Downloading...'}
+                    {code === '_' ? '正在加载文件...' : '下载中...'}
                 </TextBox>
             );
         case FAILED_DATA:
             return (
                 <TextBox extraClassName="loading-error">
-                    Unable to load the data. Perhaps it expired? Are you using a
-                    recent version?
+                    出现错误：无法加载数据。也许它过期了？您有使用最新版本吗？点击<Link href="/">首页</Link>回到首页
                 </TextBox>
             );
         case LOADED_PROFILE_DATA:
             return (
-                <Suspense fallback={<TextBox>Loading...</TextBox>}>
+                <Suspense fallback={<TextBox>加载中...</TextBox>}>
                     <Sampler
                         data={data as SamplerData}
                         fetchUpdatedData={fetchUpdatedData}
@@ -126,7 +126,7 @@ export default function SparkViewer() {
             );
         case LOADED_HEAP_DATA:
             return (
-                <Suspense fallback={<TextBox>Loading...</TextBox>}>
+                <Suspense fallback={<TextBox>加载中...</TextBox>}>
                     <Heap
                         data={data as HeapData}
                         metadata={metadata as HeapMetadata}
@@ -136,7 +136,7 @@ export default function SparkViewer() {
             );
         case LOADED_HEALTH_DATA:
             return (
-                <Suspense fallback={<TextBox>Loading...</TextBox>}>
+                <Suspense fallback={<TextBox>加载中...</TextBox>}>
                     <Health
                         data={data as HealthData}
                         metadata={metadata as HealthMetadata}
@@ -145,6 +145,6 @@ export default function SparkViewer() {
                 </Suspense>
             );
         default:
-            return <TextBox>Unknown state - this is a bug.</TextBox>;
+            return <TextBox>未知状态！ - 这属于一个错误。请反馈。</TextBox>;
     }
 }

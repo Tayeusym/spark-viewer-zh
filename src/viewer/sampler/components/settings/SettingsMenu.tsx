@@ -27,9 +27,8 @@ export default function SettingsMenu({
         <TextBox extraClassName={styles['settings-menu']}>
             {mappingsMetadata && (
                 <Setting
-                    name="Mappings"
-                    desc="Select which deobfuscation mappings the viewer should
-                        use when displaying profiler frames."
+                    name="映射"
+                    desc="择查看器在显示性能分析帧时应使用的去混淆映射。"
                 >
                     <MappingsSelector
                         mappingsMetadata={mappingsMetadata}
@@ -39,8 +38,8 @@ export default function SettingsMenu({
                 </Setting>
             )}
             <Setting
-                name="Info Points"
-                desc="Select whether info points should be shown."
+                name="信息点"
+                desc="选择是否显示信息点。"
             >
                 <Switch value={infoPoints} toggle={toggleInfoPoints} />
             </Setting>

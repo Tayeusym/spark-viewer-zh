@@ -7,15 +7,14 @@ export default function SourcesViewHeader({ children }: HeaderProps) {
     const sourceNoun = ['Fabric', 'Forge', 'NeoForge'].includes(
         metadata.platform?.name!
     )
-        ? { singular: 'mod', plural: 'Mods' }
-        : { singular: 'plugin', plural: 'Plugins' };
+        ? { singular: '模组', plural: '模组' }
+        : { singular: '插件', plural: '插件' };
 
     return (
         <div className="header">
-            <h2>{sourceNoun.plural} View</h2>
+            <h2>{sourceNoun.plural}视图</h2>
             <p>
-                This view shows a filtered representation of the profile broken
-                down by {sourceNoun.singular}.
+                此视图显示了按{sourceNoun.singular}分解的个人资料过滤表示。
             </p>
             {children}
         </div>

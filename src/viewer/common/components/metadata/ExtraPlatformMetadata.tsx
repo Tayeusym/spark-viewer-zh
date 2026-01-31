@@ -9,7 +9,7 @@ export default function ExtraPlatformMetadata({
 }: ExtraPlatformMetadataProps) {
     return (
         <div className="configurations">
-            <p>Some extra metadata was provided by the platform:</p>
+            <p>平台提供了额外的元数据：</p>
             <ConfigurationObject data={data} />
         </div>
     );

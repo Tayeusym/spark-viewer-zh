@@ -3,10 +3,9 @@ import { HeaderProps } from './types';
 export default function FlatViewHeader({ children }: HeaderProps) {
     return (
         <div className="header">
-            <h2>Flat View</h2>
+            <h2>平面视图</h2>
             <p>
-                This view shows a flattened representation of the profile, where
-                the top 250 method calls are listed.
+                此视图显示了配置文件的扁平化表示，其中列出了前250个方法调用。
             </p>
             {children}
         </div>

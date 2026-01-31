@@ -24,12 +24,11 @@ export default function VersionWarning() {
     return (
         <TextBox extraClassName={styles['version-warning']}>
             {warning}
-            <b> This profile was created using an old version of spark! </b>
+            <b>这个配置文件使用的是旧版本的 spark 创建的！</b>
             {warning}
             <FontAwesomeIcon icon={faTimes} onClick={onClick} />
             <br />
-            Some viewer features cannot be supported. Please consider updating
-            to a newer version.
+            无法支持某些功能，请考虑更新到较新的版本。
         </TextBox>
     );
 }

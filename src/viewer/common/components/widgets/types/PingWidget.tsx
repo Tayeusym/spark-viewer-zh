@@ -26,10 +26,10 @@ export default function PingWidget({ ping }: PingWidgetProps) {
 
     return (
         <Widget title="Ping" formatter={formatter}>
-            <WidgetValue value={ping.last15M!.min} label="min" />
-            <WidgetValue value={ping.last15M!.median} label="med" />
-            <WidgetValue value={ping.last15M!.percentile95} label="95%ile" />
-            <WidgetValue value={ping.last15M!.max} label="max" />
+            <WidgetValue value={ping.last15M!.min} label="分钟" />
+            <WidgetValue value={ping.last15M!.median} label="中等" />
+            <WidgetValue value={ping.last15M!.percentile95} label="95%位数" />
+            <WidgetValue value={ping.last15M!.max} label="最大" />
         </Widget>
     );
 }

@@ -33,7 +33,7 @@ export class LocalSocketClient {
             'verify',
         ]);
 
-        console.log('[WS] Loaded viewer keys and decoded remote public key');
+        console.log('[WS] 已加载查看器密钥并解码远程公钥');
 
         const client = new LocalSocketClient();
         const socket = await RemoteSocketClient.connect(
@@ -48,7 +48,7 @@ export class LocalSocketClient {
                     listener.onClose();
                 },
                 onopen: () => {
-                    console.log('[WS] Socket open, initialising connection...');
+                    console.log('[WS] 套接字已打开，正在初始化连接...');
                     new InitialisationTask(client, listener).run();
                 },
                 onmessage: e => {

@@ -5,7 +5,7 @@ const { host } = new URL(env.NEXT_PUBLIC_SPARK_BASE_URL);
 
 export default function Document() {
     return (
-        <Html lang="en">
+        <Html lang="zh-CN">
             <Head>
                 <meta charSet="utf-8" />
                 <meta name="theme-color" content="#FFC93A" />

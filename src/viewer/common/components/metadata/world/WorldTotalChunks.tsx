@@ -28,7 +28,7 @@ export default function WorldTotalChunks({
     return (
         <>
             <p>
-                <b>Chunks</b> (total): <span>{totalChunks}</span>
+                <b>块</b> （总计）： <span>{totalChunks}</span>
             </p>
             <ul>
                 {worlds

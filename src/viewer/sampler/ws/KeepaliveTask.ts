@@ -30,7 +30,7 @@ export class KeepaliveTask {
         if (packet.oneofKind === 'serverPong') {
             if (!packet.serverPong.ok) {
                 console.log(
-                    '[WS] Server closed the connection, disconnecting...'
+                    '[WS] 服务器已关闭，正在断开连接...'
                 );
                 this.socket.close();
                 return ListenerResult.STOP_LISTENING;
@@ -55,7 +55,7 @@ export class KeepaliveTask {
 
         if (this.lastPing !== 0 && Date.now() - this.lastPong > 45000) {
             console.log(
-                '[WS] Server stopped responding to keepalive, disconnecting'
+                '[WS] 服务器停止响应心跳，正在断开连接'
             );
             this.socket.close();
             return;

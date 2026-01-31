@@ -36,7 +36,7 @@ export default function MemoryWidget({ memory, label }: MemoryWidgetProps) {
         (memory as SystemStatistics_Memory_MemoryPool).total;
 
     return (
-        <Widget title="Memory" label={label} formatter={formatter}>
+        <Widget title="内存" label={label} formatter={formatter}>
             <WidgetSingleValue value={memory.used} total={total} />
         </Widget>
     );

@@ -19,7 +19,7 @@ export default function WidgetSingleValue({
 
     const percent = (value / total) * 100;
     const formattedPercent = percent
-        ? percent.toLocaleString('en-US', {
+        ? percent.toLocaleString('zh-CN', {
               maximumFractionDigits: 2,
           }) + '%'
         : '';

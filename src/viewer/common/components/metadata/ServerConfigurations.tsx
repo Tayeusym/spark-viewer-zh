@@ -9,7 +9,7 @@ export default function ServerConfigurations({
 }: ServerConfigurationsProps) {
     return (
         <div className="configurations">
-            <p>The server is using the following configuration settings:</p>
+            <p>服务器正在使用以下配置文件设置：</p>
             <ConfigurationObject data={parsedConfigurations} />
         </div>
     );

@@ -32,15 +32,15 @@ export default function ToggleViewButton({
 
                 let label;
                 if (v === VIEW_ALL) {
-                    label = 'all';
+                    label = '全部';
                 } else if (v === VIEW_FLAT) {
-                    label = 'flat';
+                    label = '平面';
                 } else {
                     label = ['Fabric', 'Forge', 'NeoForge'].includes(
                         metadata?.platform?.name || ''
                     )
-                        ? 'mods'
-                        : 'plugins';
+                        ? '模组'
+                        : '插件';
                 }
 
                 return (
@@ -48,7 +48,7 @@ export default function ToggleViewButton({
                         key={label}
                         icon={faEye}
                         onClick={onClick}
-                        title="Toggle the view"
+                        title="切换视图"
                         extraClassName={
                             view === v
                                 ? 'sources-view-button toggled'

@@ -18,7 +18,7 @@ export default function ExitFlameButton({
         <FaButton
             icon={faTimes}
             onClick={onClick}
-            title="Exit the Flame Graph view"
+            title="退出火焰图视图"
         />
     );
 }

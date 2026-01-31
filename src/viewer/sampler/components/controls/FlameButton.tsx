@@ -23,7 +23,7 @@ export default function FlameButton({ data, setFlameData }: FlameButtonProps) {
         <FaButton
             icon={faFire}
             onClick={onClick}
-            title="View the profile as a Flame Graph"
+            title="使用火焰图形式查看配置文件"
         />
     );
 }

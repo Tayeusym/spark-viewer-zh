@@ -9,7 +9,7 @@ export default function JvmStartupArgs({
 }: JvmStartupArgsProps) {
     return (
         <p>
-            The JVM was started with the following arguments:
+            JVM 使用了以下参数来启动：
             <br />
             <br />
             <span

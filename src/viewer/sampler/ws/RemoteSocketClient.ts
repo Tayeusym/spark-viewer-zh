@@ -23,7 +23,7 @@ export default class RemoteSocketClient {
         keys: SocketKeys,
         listeners: AsyncWebSocketListeners
     ): Promise<RemoteSocketClient> {
-        console.log('[WS] Creating remote socket client');
+        console.log('[WS] 正在创建远程套接字客户端');
         const worker = new Worker(
             new URL('./SocketClient.ts', import.meta.url)
         );

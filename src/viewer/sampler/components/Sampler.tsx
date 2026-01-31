@@ -225,9 +225,9 @@ export default function Sampler({
             )}
 
             <Menu id={'sampler-cm'} theme="dark">
-                <Item onClick={handleFlame}>View as Flame Graph</Item>
-                <Item onClick={handleHighlight}>Toggle bookmark</Item>
-                <Item onClick={handleHighlightClear}>Clear all bookmarks</Item>
+                <Item onClick={handleFlame}>以火焰图形式查看</Item>
+                <Item onClick={handleHighlight}>切换书签</Item>
+                <Item onClick={handleHighlightClear}>清除所有书签</Item>
             </Menu>
         </div>
     );

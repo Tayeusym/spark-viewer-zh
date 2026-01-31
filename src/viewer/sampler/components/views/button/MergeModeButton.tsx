@@ -14,18 +14,15 @@ export default function MergeModeButton({
         <Button
             value={merged}
             setValue={setMerged}
-            title="Merge Mode"
-            labelTrue="Merge"
-            labelFalse="Separate"
+            title="合并模式"
+            labelTrue="合并"
+            labelFalse="分离"
         >
             <p>
-                Method calls with the same signature will be merged together,
-                even though they may not have been invoked by the same calling
-                method.
+                具有相同签名的方法调用将被合并在一起，即使它们可能没有由相同的调用方法调用。
             </p>
             <p>
-                Method calls that have the same signature, but that haven&apos;t
-                been invoked by the same calling method will show separately.
+                具有相同签名但未由同一调用方法调用的方法调用将分别显示。
             </p>
         </Button>
     );

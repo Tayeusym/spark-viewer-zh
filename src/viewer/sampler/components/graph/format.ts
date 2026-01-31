@@ -4,12 +4,12 @@ export function getAxisLabel(statisticName: WindowStatisticsKey) {
     return {
         tps: 'TPS',
         msptMedian: 'MSPT',
-        cpuProcess: 'CPU (process)',
-        cpuSystem: 'CPU (system)',
-        players: 'Players',
-        entities: 'Entities',
-        tileEntities: 'Tile Entities',
-        chunks: 'Chunks',
+        cpuProcess: 'CPU （进程）',
+        cpuSystem: 'CPU （系统）',
+        players: 'Players（玩家）',
+        entities: 'Entities（实体）',
+        tileEntities: 'Tile Entities（瓷砖实体）',
+        chunks: 'Chunks（块）',
     }[statisticName];
 }
 

@@ -10,7 +10,7 @@ export interface WorldSummaryProps {
 export default function WorldSummary({ worldStatistics }: WorldSummaryProps) {
     return (
         <div>
-            <div className="header">Summary</div>
+            <div className="header">总览</div>
             <div className="detail-lists">
                 <div>
                     <WorldTotalEntities
@@ -21,7 +21,7 @@ export default function WorldSummary({ worldStatistics }: WorldSummaryProps) {
                 </div>
                 <div>
                     <p>
-                        <b>Entity Counts</b>:
+                        <b>实体总数</b>：
                     </p>
                     <EntityCountsList
                         entityCounts={worldStatistics.entityCounts}

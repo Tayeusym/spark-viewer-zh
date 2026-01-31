@@ -14,17 +14,15 @@ export default function BottomUpButton({
         <Button
             value={bottomUp}
             setValue={setBottomUp}
-            title="Display"
-            labelTrue="Bottom Up"
-            labelFalse="Top Down"
+            title="显示"
+            labelTrue="从下往上"
+            labelFalse="俯视视角"
         >
             <p>
-                The call tree is reversed - expanding a node reveals the method
-                that called it.
+                调用树是反向的 - 展开一个节点会显示调用它的方法。
             </p>
             <p>
-                The call tree is &#39;normal&#39; - expanding a node reveals the
-                sub-methods that it calls.
+                调用树是正常的 - 展开一个节点会显示它所调用的子方法。
             </p>
         </Button>
     );

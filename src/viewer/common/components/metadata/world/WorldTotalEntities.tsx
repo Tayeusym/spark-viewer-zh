@@ -12,7 +12,7 @@ export default function WorldTotalEntities({
     return (
         <>
             <p>
-                <b>Entities</b> (total): <span>{totalEntities}</span>
+                <b>实体</b> （总计）： <span>{totalEntities}</span>
             </p>
             <ul>
                 {worlds

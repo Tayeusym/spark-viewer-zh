@@ -21,7 +21,7 @@ export default function CpuWidget({ cpu, label }: CpuWidgetProps) {
         },
         format: value => {
             return (
-                (value * 100).toLocaleString('en-US', {
+                (value * 100).toLocaleString('zh-CN', {
                     maximumFractionDigits: 2,
                 }) + '%'
             );
@@ -30,8 +30,8 @@ export default function CpuWidget({ cpu, label }: CpuWidgetProps) {
 
     return (
         <Widget title="CPU" label={label} formatter={formatter}>
-            <WidgetValue value={cpu.last1M} label="1m" />
-            <WidgetValue value={cpu.last15M} label="15m" />
+            <WidgetValue value={cpu.last1M} label="1分钟" />
+            <WidgetValue value={cpu.last15M} label="15分钟" />
         </Widget>
     );
 }

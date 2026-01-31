@@ -96,12 +96,12 @@ export default function Download() {
     if (status !== Status.ERROR) {
         content = <DownloadPage info={info} changelog={changelog} />;
     } else {
-        content = <TextBox>Error: unable to get version information.</TextBox>;
+        content = <TextBox>错误：无法获取版本信息</TextBox>;
     }
 
     return (
         <article className={styles.downloads}>
-            <h1>Downloads</h1>
+            <h1>下载</h1>
             {content}
         </article>
     );
@@ -118,10 +118,10 @@ const processJenkinsInfo = (
     info: JenkinsInfo | undefined
 ): [string, string, ArtifactsMap] => {
     const artifacts: ArtifactsMap = {};
-    let version = 'unknown';
+    let version = '未知';
     const timestamp = info
         ? new Date(info?.timestamp).toLocaleString()
-        : 'unknown';
+        : '未知';
     for (const { fileName, relativePath } of info?.artifacts || []) {
         const [v, platform] = fileName.slice(0, -4).split('-').slice(1);
         version = v;
@@ -146,9 +146,7 @@ const DownloadPage = ({
     return (
         <>
             <p>
-                The latest version of spark is{' '}
-                <span className="version-number">v{version}</span>, which was
-                created at {timestamp}.
+                当前 spark 的最新版本是<span className="version-number">v{version}</span>，它于{timestamp}创建。
             </p>
             <br />
 
@@ -156,54 +154,41 @@ const DownloadPage = ({
 
             <br />
             <p>
-                Once you&apos;ve got spark installed, head over to the{' '}
-                <a href={`${env.NEXT_PUBLIC_SPARK_BASE_URL}/docs`}>
-                    documentation
-                </a>{' '}
-                to learn how to use it!
+                当您安装spark后，请在<a href={`${env.NEXT_PUBLIC_SPARK_BASE_URL}/docs`} target="_blank">文档</a>来查看如何使用它。
             </p>
             <p className="caveat">
-                Note: spark is pre-bundled with Paper 1.21+, so you don&apos;t
-                need to install the plugin!
+                提示：在Paper 1.21+版本中，spark插件已经预装，因此无需额外安装插件！
             </p>
 
-            <h2>Other Platforms</h2>
+            <h2>其他平台</h2>
             <p>
-                spark is also available for some other platforms. These releases
-                are provided as-is and are supported by the community. For more
-                info, please see{' '}
-                <a href="https://github.com/lucko/spark-extra-platforms">
-                    spark-extra-platforms
-                </a>{' '}
-                on GitHub.{' '}
+                spark 支持其他一些平台，这些版本为原样提供，并且由社区维护。更多信息，请参见GitHub上的<a href="https://github.com/lucko/spark-extra-platforms" target="_blank">spark-extra-platforms</a>官方项目。
             </p>
             <ExtraDownloadButtons />
 
-            <h2>Recent Changes</h2>
+            <h2>最近更改（英文）</h2>
             <RecentChangelog changelog={changelogSlice} />
 
-            <h2>Older Versions</h2>
+            <h2>旧版本</h2>
             <p>
-                Releases for older Minecraft versions are listed below. These
-                are not actively supported, but should still work ok :)
+                下面是所有 Minecraft 旧版本的发布版本，虽然已不再积极支持，但仍然可以正常运行:)
             </p>
             <OlderVersionsList versions={OLD_VERSIONS} />
-            <p>(Note: The links above will open CurseForge.com in a new tab)</p>
+            <p>(提示：点击上方任意版本，将在 CurseForge.com 中打开。)</p>
         </>
     );
 };
 
 const RecentChangelog = ({ changelog }: { changelog: ChangelogEntry[] }) => {
     if (changelog.length === 0) {
-        return <p>Loading...</p>;
+        return <p>加载中...</p>;
     }
 
     return (
         <div className={changelogStyles.changelog}>
             <ChangelogList entries={changelog} />
             <p>
-                And more! See the <Link href={'changelog'}>full changelog</Link>
-                .
+                还有更多！请查看<Link href={'changelog'} target="_blank">完整更新日志</Link>。
             </p>
         </div>
     );

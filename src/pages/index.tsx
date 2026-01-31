@@ -41,11 +41,11 @@ const Index: NextPageWithLayout = () => {
 const Navigation = () => {
     return (
         <nav>
-            <Link title="Downloads" icon={faArrowCircleDown} url="download">
-                Download the latest version of spark.
+            <Link title="下载" icon={faArrowCircleDown} url="download">
+                下载新版本的spark。
             </Link>
-            <Link title="Documentation" icon={faBook} url="docs">
-                Read the documentation and usage guides.
+            <Link title="文档（英文）" icon={faBook} url="docs">
+                阅读文档和使用指南。之后我们会汉化它。
             </Link>
         </nav>
     );
@@ -73,29 +73,22 @@ const Link = ({ title, icon, url, children }: LinkProps) => {
 const AboutSection = () => {
     return (
         <section>
-            <h2>About</h2>
+            <h2>关于</h2>
             <p>
-                spark is a performance profiler, made up of three main
-                components.
+                spark 是一个性能分析器，它由3个部分组成：
             </p>
-            <AboutFeature title="Profiler" icon={faMicrochip}>
-                spark can help to diagnose performance problems and bottlenecks
-                with its built-in profiler.
+            <AboutFeature title="性能分析器" icon={faMicrochip}>
+                spark 通过内置的分析器帮助你诊断问题的瓶颈。
             </AboutFeature>
-            <AboutFeature title="Memory Inspection" icon={faMemory}>
-                spark can produce full heap dumps, present a summary of what’s
-                using the most memory, and monitor GC activity.
+            <AboutFeature title="内存检查" icon={faMemory}>
+                spark 可生成完整的堆转储，示使用内存最多的部分，并监控GC活动。
             </AboutFeature>
-            <AboutFeature title="Health Reporting" icon={faHeartbeat}>
-                spark monitors and reports a number of key metrics which are
-                useful for tracking performance over time.
+            <AboutFeature title="健康报告" icon={faHeartbeat}>
+                spark 能监控并报告一系列的关键指标，助于随时间跟踪并分析性能表现。
             </AboutFeature>
 
             <p>
-                More information about spark can be found on{' '}
-                <a href="https://github.com/lucko/spark">GitHub</a>, or you can
-                come chat with us on{' '}
-                <a href="https://discord.gg/PAGT2fu">Discord</a>.
+                更多信息在可以<a href="https://github.com/Tayeusym/spark-viewer-zh" target="_blank">这里</a>找到一份中文版的。官方项目在<a href="https://github.com/lucko/spark" target="_blank">这里</a>查看原始内容（英文）。
             </p>
         </section>
     );
@@ -126,40 +119,39 @@ const ViewerSection = ({
 }) => {
     return (
         <section>
-            <h2>Viewer</h2>
-            <p>This website is also an online viewer for spark data.</p>
-            <p>In order to use it:</p>
+            <h2>网页查看器</h2>
+            <p>使用时，请尊重他人权利。注意文明。</p>
+            <p>这里也是查看spark数据的站点。</p>
+            <p>在游戏内如何使用它：</p>
             <ol>
                 <li>
-                    Generate a{' '}
+                    使用相应命令生成
                     <a
                         href={`${env.NEXT_PUBLIC_SPARK_BASE_URL}/docs/Command-Usage#spark-profiler`}
                     >
-                        profile
-                    </a>{' '}
-                    or{' '}
+                        配置文件
+                    </a>
+                    或
                     <a
                         href={`${env.NEXT_PUBLIC_SPARK_BASE_URL}/docs/Command-Usage#spark-heapsummary`}
                     >
-                        heap summary
-                    </a>{' '}
-                    using the appropriate spark commands.
+                        堆内存
+                    </a>摘要。
                 </li>
                 <li>
-                    After the data has been uploaded, click the link to open the
-                    viewer.
+                    取决于您执行此命令的位置（如服务端或客户端），当数据上传后，聊天栏（或服务器日志）会出现一个URL地址
+                </li>
+                <li>
+                    点击（客户端）或复制并访问（服务端日志）即可打开查看器。
                 </li>
             </ol>
             <p>
-                You can also generate or export a <code>.sparkprofile</code> or{' '}
-                <code>.sparkheap</code> file and open it by dragging it into the
-                box below.
+               您也可以生成<code>.sparkprofile</code>或
+                <code>.sparkheap</code>格式的文件，并将其拖入到下方的框可打开文件数据。
             </p>
             <FilePicker callback={onFileSelected} />
             <p>
-                The website/viewer is written in JavaScript using the React
-                framework, and open-source&apos;d on GitHub. Pull requests are
-                much appreciated!
+                本站点/查看使用JavaScript编写，并基于React框架。以 GPL-3.0 协议开源在GitHub。如果您对此中文版的网页存在任何问题，欢迎在<a href="https://github.com/Tayeusym/spark-viewer-zh/issues" target="_blank">这里</a>用中文反馈（也可以英文，但是建议留一份翻译，谢谢，站长不懂英文）。
             </p>
         </section>
     );

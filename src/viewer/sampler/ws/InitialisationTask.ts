@@ -54,8 +54,8 @@ export class InitialisationTask {
         ) {
             const trusted = msg.state === ServerConnectResponse_State.ACCEPTED;
             console.log(
-                `[WS] Established connection with server (${
-                    trusted ? 'trusted' : 'untrusted'
+                `[WS] 已与服务器建立连接 (${
+                    trusted ? '可信' : '不可信'
                 })`
             );
             this.socket.startKeepalive(this.listener.onPing).then(_ => {});
@@ -72,7 +72,7 @@ export class InitialisationTask {
         }
 
         if (msg.state === ServerConnectResponse_State.REJECTED) {
-            console.log('[WS] Rejected by server, disconnecting.');
+            console.log('[WS] 服务器拒绝，正在断开连接。');
             this.socket.socket!.close();
             return ListenerResult.STOP_LISTENING;
         }

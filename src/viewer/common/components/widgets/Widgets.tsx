@@ -25,18 +25,18 @@ export default function Widgets({ metadata, expanded }: WidgetsProps) {
         >
             {platform.tps && <TpsWidget tps={platform.tps} />}
             {platform.mspt && <MsptWidget mspt={platform.mspt} />}
-            <CpuWidget cpu={system.cpu!.processUsage!} label="process" />
-            <MemoryWidget memory={platform.memory!.heap!} label="process" />
-            <CpuWidget cpu={system.cpu!.systemUsage!} label="system" />
-            <MemoryWidget memory={system.memory!.physical!} label="physical" />
-            <MemoryWidget memory={system.memory!.swap!} label="swap" />
+            <CpuWidget cpu={system.cpu!.processUsage!} label="过程" />
+            <MemoryWidget memory={platform.memory!.heap!} label="过程" />
+            <CpuWidget cpu={system.cpu!.systemUsage!} label="系统" />
+            <MemoryWidget memory={system.memory!.physical!} label="物理" />
+            <MemoryWidget memory={system.memory!.swap!} label="交换空间" />
             <DiskWidget disk={system.disk!} />
             {platform.ping && <PingWidget ping={platform.ping} />}
             {Object.entries(platform.gc).map(([label, data]) => {
                 return (
                     <GcWidget
                         gc={data}
-                        title="during"
+                        title="期间"
                         label={label}
                         key={label}
                     />
@@ -46,7 +46,7 @@ export default function Widgets({ metadata, expanded }: WidgetsProps) {
                 return (
                     <GcWidget
                         gc={data}
-                        title="all"
+                        title="全部"
                         label={label}
                         key={'system ' + label}
                     />

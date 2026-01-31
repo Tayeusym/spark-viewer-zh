@@ -14,10 +14,10 @@ export default function MappingsSelector({
     let groups: MappingsSelectorGroup[] = [
         {
             id: 'none',
-            label: 'None',
+            label: '无',
             options: [
-                { id: 'auto', label: 'Auto Detect' },
-                { id: 'none', label: 'No Mappings' },
+                { id: 'auto', label: '自动检测' },
+                { id: 'none', label: '无映射' },
             ],
         },
     ];
@@ -37,7 +37,7 @@ export default function MappingsSelector({
     return (
         <span className="dropdown" id="mappings-selector">
             <select
-                title="mappings"
+                title="映射"
                 value={mappings}
                 onChange={e => setMappings(e.target.value)}
             >

@@ -35,10 +35,10 @@ export default function MsptWidget({ mspt }: MsptWidgetProps) {
 
     return (
         <Widget title="MSPT" formatter={formatter}>
-            <WidgetValue value={mspt.last5M!.min} label="min" />
-            <WidgetValue value={mspt.last5M!.median} label="med" />
-            <WidgetValue value={mspt.last5M!.percentile95} label="95%ile" />
-            <WidgetValue value={mspt.last5M!.max} label="max" />
+            <WidgetValue value={mspt.last5M!.min} label="分钟" />
+            <WidgetValue value={mspt.last5M!.median} label="中等" />
+            <WidgetValue value={mspt.last5M!.percentile95} label="95%位数" />
+            <WidgetValue value={mspt.last5M!.max} label="最大" />
         </Widget>
     );
 }

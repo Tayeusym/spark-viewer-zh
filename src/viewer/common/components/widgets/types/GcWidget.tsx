@@ -27,7 +27,7 @@ export default function GcWidget({ gc, title, label }: GcWidgetProps) {
     // thresholds taken from aikar/timings
     // https://github.com/aikar/timings/blob/master/src/js/ui/ServerInfo.jsx#L20
     if (label === 'G1 Young Generation') {
-        label = 'G1 Young';
+        label = 'G1 年轻';
         warningLevels = {
             time: {
                 red: 150,
@@ -39,7 +39,7 @@ export default function GcWidget({ gc, title, label }: GcWidgetProps) {
             },
         };
     } else if (label === 'G1 Old Generation') {
-        label = 'G1 Old';
+        label = 'G1 旧';
         warningLevels = {
             time: {
                 red: 50,
@@ -79,7 +79,7 @@ export default function GcWidget({ gc, title, label }: GcWidgetProps) {
             }
         },
         format: value => {
-            return formatNumber(value) + 'ms';
+            return formatNumber(value) + '毫秒';
         },
     };
 
@@ -98,10 +98,10 @@ export default function GcWidget({ gc, title, label }: GcWidgetProps) {
         format: value => {
             if (value < 1000) {
                 return (
-                    value.toLocaleString('en-US', {
+                    value.toLocaleString('zh-CN', {
                         maximumSignificantDigits: 2,
                         useGrouping: false,
-                    }) + 'ms'
+                    }) + '毫秒'
                 );
             }
 
@@ -113,12 +113,12 @@ export default function GcWidget({ gc, title, label }: GcWidgetProps) {
             }
 
             if (minutes) {
-                return minutes + 'm' + Math.round(seconds) + 's';
+                return minutes + '分钟' + Math.round(seconds) + '秒';
             } else {
                 return (
-                    seconds.toLocaleString('en-US', {
+                    seconds.toLocaleString('zh-CN', {
                         maximumFractionDigits: 1,
-                    }) + 's'
+                    }) + '秒'
                 );
             }
         },
@@ -128,17 +128,17 @@ export default function GcWidget({ gc, title, label }: GcWidgetProps) {
         <Widget title="GC" label={label + ', ' + title}>
             <WidgetValue
                 value={gc.total}
-                label="total"
+                label="总计"
                 formatter={WidgetFormat.defaultFormatter}
             />
             <WidgetValue
                 value={gc.avgTime}
-                label="avg time"
+                label="平均时间"
                 formatter={timeFormatter}
             />
             <WidgetValue
                 value={gc.avgFrequency}
-                label="avg freq"
+                label="平均频率"
                 formatter={freqFormatter}
             />
         </Widget>

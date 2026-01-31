@@ -19,11 +19,9 @@ export default function NetworkStatistics({
 }: NetworkStatisticsProps) {
     return (
         <>
-            <h2>Network Interfaces</h2>
+            <h2>网络接口</h2>
             <p>
-                Note: the usage tracked below is captured at a system level
-                (includes data from other processes running on the same
-                machine).
+                注：以下跟踪的使用情况是在系统级别捕获的（包括在同一台机器上运行的其他进程的数据）。
             </p>
             <div>
                 {Object.entries(systemStatistics.net).map(([name, data]) => (
@@ -52,13 +50,13 @@ const NetworkInterface = ({
                 )}
             >
                 <NetworkInterfaceWidget
-                    direction="Transmit"
-                    format="bytes/sec"
+                    direction="传输"
+                    format="字节/秒"
                     values={data.txBytesPerSecond!}
                 />
                 <NetworkInterfaceWidget
-                    direction="Receive"
-                    format="bytes/sec"
+                    direction="接收"
+                    format="字节/秒"
                     values={data.rxBytesPerSecond!}
                 />
             </div>
@@ -70,13 +68,13 @@ const NetworkInterface = ({
                 )}
             >
                 <NetworkInterfaceWidget
-                    direction="Transmit"
-                    format="packets/sec"
+                    direction="传输"
+                    format="包/秒"
                     values={data.txPacketsPerSecond!}
                 />
                 <NetworkInterfaceWidget
-                    direction="Receive"
-                    format="packets/sec"
+                    direction="接收"
+                    format="包/秒"
                     values={data.rxPacketsPerSecond!}
                 />
             </div>
@@ -84,8 +82,8 @@ const NetworkInterface = ({
     );
 };
 
-type Direction = 'Transmit' | 'Receive';
-type StatFormat = 'bytes/sec' | 'packets/sec';
+type Direction = '传输' | '接收';
+type StatFormat = '字节/秒' | '包/秒';
 
 interface NetworkInterfaceWidgetProps {
     direction: Direction;
@@ -107,7 +105,7 @@ const NetworkInterfaceWidget = ({
             return WidgetFormat.colors.green;
         },
         format: value => {
-            if (format === 'bytes/sec') {
+            if (format === '字节/秒') {
                 return formatBytes(value);
             } else {
                 return formatNumber(value);
@@ -117,10 +115,10 @@ const NetworkInterfaceWidget = ({
 
     return (
         <Widget title={direction} label={format} formatter={formatter}>
-            <WidgetValue value={values.min} label="min" />
-            <WidgetValue value={values.median} label="med" />
-            <WidgetValue value={values.percentile95} label="95%ile" />
-            <WidgetValue value={values.max} label="max" />
+            <WidgetValue value={values.min} label="分钟" />
+            <WidgetValue value={values.median} label="中等" />
+            <WidgetValue value={values.percentile95} label="95%位数" />
+            <WidgetValue value={values.max} label="最大" />
         </Widget>
     );
 };

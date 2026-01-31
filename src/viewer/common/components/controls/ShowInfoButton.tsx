@@ -21,7 +21,7 @@ export default function ShowInfoButton({
             <FaButton
                 icon={faGauge}
                 onClick={metadataToggle.toggleWidgets}
-                title="Click to toggle the widgets"
+                title="点击以切换小部件"
                 extraClassName={
                     metadataToggle.showWidgets ? 'toggled' : undefined
                 }
@@ -29,7 +29,7 @@ export default function ShowInfoButton({
             <FaButton
                 icon={faInfoCircle}
                 onClick={metadataToggle.toggleInfo}
-                title="Click to toggle the detailed metadata display"
+                title="点击以切换详细信息内元数据显示"
                 extraClassName={metadataToggle.showInfo ? 'toggled' : undefined}
             />
         </>

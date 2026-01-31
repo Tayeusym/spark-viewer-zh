@@ -8,12 +8,12 @@ export function formatTime(time: number, n = 2) {
 
 export function formatBytes(bytes: number) {
     if (bytes < 0) {
-        return 'invalid';
+        return '无效数据';
     }
     if (bytes === 0) {
-        return '0 bytes';
+        return '0 字节';
     }
-    const sizes = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+    const sizes = ['字节', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
     const sizeIndex = Math.floor(Math.log(bytes) / Math.log(1024));
     return (
         parseFloat((bytes / Math.pow(1024, sizeIndex)).toFixed(1)) +
@@ -24,7 +24,7 @@ export function formatBytes(bytes: number) {
 
 export function formatBytesShort(bytes: number) {
     if (bytes < 0) {
-        return 'invalid';
+        return '无效数据';
     }
     if (bytes === 0) {
         return '0B';
@@ -44,9 +44,9 @@ export function formatDuration(duration: number) {
     const s = seconds % 60;
 
     let str = [];
-    if (h) str.push(h + 'h');
-    if (m) str.push(m + 'm');
-    if (s) str.push(s + 's');
+    if (h) str.push(h + '小时');
+    if (m) str.push(m + '分钟');
+    if (s) str.push(s + '秒');
 
     return str.join(' ');
 }
@@ -65,7 +65,7 @@ export function formatDate(startTime: number | string | Date) {
 }
 
 export function formatNumber(value: number) {
-    return value.toLocaleString('en-US', {
+    return value.toLocaleString('zh-CN', {
         maximumSignificantDigits: value > 1 ? 3 : value > 0.1 ? 2 : 1,
         useGrouping: false,
     });

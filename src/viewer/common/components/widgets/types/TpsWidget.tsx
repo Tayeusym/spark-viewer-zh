@@ -28,7 +28,7 @@ export default function TpsWidget({ tps }: TpsWidgetProps) {
             }
         },
         format: value => {
-            return value.toLocaleString('en-US', {
+            return value.toLocaleString('zh-CN', {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
             });
@@ -37,9 +37,9 @@ export default function TpsWidget({ tps }: TpsWidgetProps) {
 
     return (
         <Widget title="TPS" formatter={formatter}>
-            <WidgetValue value={tps.last1M} label="1m" />
-            <WidgetValue value={tps.last5M} label="5m" />
-            <WidgetValue value={tps.last15M} label="15m" />
+            <WidgetValue value={tps.last1M} label="1分钟" />
+            <WidgetValue value={tps.last5M} label="5分钟" />
+            <WidgetValue value={tps.last15M} label="15分钟" />
         </Widget>
     );
 }

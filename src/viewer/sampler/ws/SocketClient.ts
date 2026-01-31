@@ -46,7 +46,7 @@ export class SocketClient {
 
         this.listeners = listeners;
 
-        console.log('[WS] Creating websocket connection');
+        console.log('[WS] 正在创建WebSocket连接');
         this.socket = new WebSocket(`${SocketClient.HOST}/${channelId}`);
         this.socket.onclose = this.onclose.bind(this);
         this.socket.onerror = this.onerror.bind(this);

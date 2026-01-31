@@ -9,8 +9,8 @@ const Error: NextPage<ErrorPageProps> = ({ statusCode }) => {
     return (
         <TextBox>
             {statusCode
-                ? `Server error ${statusCode}`
-                : 'Uh oh. An unexpected error occurred with spark-viewer client.'}
+                ? `服务器错误${statusCode}`
+                : '噢。spark查看器客户端发生意外错误。'}
         </TextBox>
     );
 };

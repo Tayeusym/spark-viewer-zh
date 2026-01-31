@@ -10,37 +10,37 @@ export const env = createEnv({
     server: {
         SPARK_DOCS_URL: z.preprocess(
             stringOrUndefined,
-            z.string().url().default('https://spark-docs.vercel.app')
+            z.string().url().default('https://spark-docs.futuresaylor.cn')
         ),
         SPARK_THUMBNAIL_SERVICE_URL: z.preprocess(
             stringOrUndefined,
-            z.string().url().default('https://spark-thumbnail-service.lucko.me')
+            z.string().url().default('https://spark-thumbnail-service.futuresaylor.cn')
         ),
         SPARK_JSON_SERVICE_URL: z.preprocess(
             stringOrUndefined,
-            z.string().url().default('https://spark-json-service.lucko.me')
+            z.string().url().default('https://spark-json-service.futuresaylor.cn')
         ),
     },
     client: {
         NEXT_PUBLIC_SPARK_BASE_URL: z.preprocess(
             stringOrUndefined,
-            z.string().url().default('https://spark.lucko.me')
+            z.string().url().default('https://spark.futuresaylor.cn')
         ),
         NEXT_PUBLIC_SPARK_BYTEBIN_URL: z.preprocess(
             stringOrUndefined,
-            z.string().url().default('https://spark-usercontent.lucko.me')
+            z.string().url().default('https://spark-usercontent.futuresaylor.cn')
         ),
         NEXT_PUBLIC_SPARK_BYTESOCKS_URL: z.preprocess(
             stringOrUndefined,
-            z.string().url().default('wss://spark-usersockets.lucko.me')
+            z.string().url().default('wss://spark-usersockets.futuresaylor.cn')
         ),
         NEXT_PUBLIC_SPARK_MAPPINGS_URL: z.preprocess(
             stringOrUndefined,
-            z.string().url().default('https://spark-mappings.lucko.me')
+            z.string().url().default('https://spark-mappings.futuresaylor.cn')
         ),
         NEXT_PUBLIC_SPARK_API_URL: z.preprocess(
             stringOrUndefined,
-            z.string().url().default('https://sparkapi.lucko.me')
+            z.string().url().default('https://sparkapi.futuresaylor.cn')
         ),
     },
     runtimeEnv: {
@@ -48,12 +48,9 @@ export const env = createEnv({
         SPARK_THUMBNAIL_SERVICE_URL: process.env.SPARK_THUMBNAIL_SERVICE_URL,
         SPARK_JSON_SERVICE_URL: process.env.SPARK_JSON_SERVICE_URL,
         NEXT_PUBLIC_SPARK_BASE_URL: process.env.NEXT_PUBLIC_SPARK_BASE_URL,
-        NEXT_PUBLIC_SPARK_BYTEBIN_URL:
-            process.env.NEXT_PUBLIC_SPARK_BYTEBIN_URL,
-        NEXT_PUBLIC_SPARK_BYTESOCKS_URL:
-            process.env.NEXT_PUBLIC_SPARK_BYTESOCKS_URL,
-        NEXT_PUBLIC_SPARK_MAPPINGS_URL:
-            process.env.NEXT_PUBLIC_SPARK_MAPPINGS_URL,
+        NEXT_PUBLIC_SPARK_BYTEBIN_URL: process.env.NEXT_PUBLIC_SPARK_BYTEBIN_URL,
+        NEXT_PUBLIC_SPARK_BYTESOCKS_URL: process.env.NEXT_PUBLIC_SPARK_BYTESOCKS_URL,
+        NEXT_PUBLIC_SPARK_MAPPINGS_URL: process.env.NEXT_PUBLIC_SPARK_MAPPINGS_URL,
         NEXT_PUBLIC_SPARK_API_URL: process.env.NEXT_PUBLIC_SPARK_API_URL,
     },
 });

@@ -47,8 +47,8 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
     const router = useRouter();
     const title =
         {
-            '/download': 'spark | downloads',
-            '/changelog': 'spark | changelog',
+            '/download': 'spark | 下载',
+            '/changelog': 'spark | 最近更改',
         }[router.pathname] || 'spark';
 
     return (

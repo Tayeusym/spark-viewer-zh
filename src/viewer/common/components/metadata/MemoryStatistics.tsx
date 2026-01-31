@@ -17,11 +17,11 @@ export default function MemoryStatistics({
 }: MemoryStatisticsProps) {
     return (
         <>
-            <h2>Memory Areas</h2>
+            <h2>内存区域</h2>
             <div className="memory">
-                {memory.heap && <MemoryPool name="Heap" usage={memory.heap} />}
+                {memory.heap && <MemoryPool name="堆内存" usage={memory.heap} />}
                 {memory.nonHeap && (
-                    <MemoryPool name="Non Heap" usage={memory.nonHeap} />
+                    <MemoryPool name="非堆内存" usage={memory.nonHeap} />
                 )}
                 {(memory.pools || [])
                     .filter(pool => pool.usage)
@@ -95,14 +95,14 @@ const MemoryUsageBar = ({
             </div>
             <ul>
                 <li>
-                    Used: <span>{formatBytes(used)}</span>
+                    已使用： <span>{formatBytes(used)}</span>
                 </li>
                 <li>
-                    Committed: <span>{formatBytes(committed)}</span>
+                    已提交： <span>{formatBytes(committed)}</span>
                 </li>
                 {max !== -1 && max !== committed && (
                     <li>
-                        Max: <span>{formatBytes(max)}</span>
+                        剩余（最大）： <span>{formatBytes(max)}</span>
                     </li>
                 )}
             </ul>

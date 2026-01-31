@@ -63,30 +63,30 @@ export default function WorldRegionSummary({
     return (
         <div className="region-view">
             <div className="header region-selector">
-                <div className="button" onClick={previous} title="Previous">
+                <div className="button" onClick={previous} title="上一个">
                     <FontAwesomeIcon icon={faBackwardStep} />
                 </div>
                 <span>
-                    Region #{regionIdx + 1} (of {regions.length})
+                    区域 #{regionIdx + 1} (共 {regions.length} 个)
                 </span>
-                <div className="button" onClick={next} title="Next">
+                <div className="button" onClick={next} title="下一个">
                     <FontAwesomeIcon icon={faForwardStep} />
                 </div>
             </div>
             <div className="detail-lists">
                 <div>
                     <p>
-                        <b>Entities</b> (<span>{region.totalEntities}</span>):
+                        <b>实体</b> （<span>{region.totalEntities}</span>）：
                     </p>
                     <EntityCountsList entityCounts={combinedEntities} />
                 </div>
                 <div>
                     <p>
-                        <b>World</b>: {region.world}
+                        <b>世界</b>： {region.world}
                     </p>
                     <br />
                     <p>
-                        <b>Chunks</b> (<span>{region.chunks.length}</span>):
+                        <b>块</b> （共<span>{region.chunks.length}</span>个）：
                     </p>
                     <ChunkCountsList chunks={region.chunks} />
                 </div>

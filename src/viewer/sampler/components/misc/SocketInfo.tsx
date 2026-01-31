@@ -16,19 +16,17 @@ export default function SocketInfo({ socket }: SocketInfoProps) {
         <TextBox extraClassName={styles['socket-info']}>
             <h2>
                 <FontAwesomeIcon icon={faCloud} color="#89d753" />{' '}
-                <b>Connected</b> via WebSocket
+                已通过<b>WebSocket</b>连接
             </h2>
             <p>
-                spark viewer is connected to the spark profiler using a socket
-                connection. <br />
-                The statistics will update every{' '}
-                {settings?.statisticsInterval ?? '?'} seconds, and the profiler
-                data will update every minute.
+                spark 查看器已经通过套接字与spark分析器建立连接。<br />
+                统计信息每{' '}
+                {settings?.statisticsInterval ?? '?'} 秒更新一次，性能分析数据每分钟更新一次。
             </p>
             <p>
-                <b>Latency</b>: {latency ?? '?'}ms
+                <b>延迟：</b>: {latency ?? '?'}毫秒
                 <br />
-                <b>Client ID</b>: {clientId}
+                <b>客户端ID：</b>: {clientId}
             </p>
         </TextBox>
     );

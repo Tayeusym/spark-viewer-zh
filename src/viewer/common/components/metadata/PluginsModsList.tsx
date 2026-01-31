@@ -31,15 +31,14 @@ export default function PluginsModsList({
         <div className="plugins-mods-list">
             {!!plugins.length && (
                 <>
-                    <h2>Plugins/Mods</h2>
+                    <h2>插件/模组</h2>
                     {hasBuiltinPlugins && (
                         <button
                             onClick={() =>
                                 setShowBuiltinPlugins(value => !value)
                             }
                         >
-                            {showBuiltinPlugins ? 'Hide' : 'Show'} built-in
-                            plugins
+                            {showBuiltinPlugins ? '隐藏' : '显示'} 内置的插件
                         </button>
                     )}
                     <ul>

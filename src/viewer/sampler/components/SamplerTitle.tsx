@@ -28,22 +28,22 @@ export default function SamplerTitle({ metadata }: SamplerTitleProps) {
 
     const alloc =
         metadata.samplerMode === SamplerMetadata_SamplerMode.ALLOCATION;
-    const title = alloc ? 'Memory Profile' : 'Profile';
+    const title = alloc ? '内存配置文件' : '配置文件';
     const formattedInterval = alloc
         ? formatBytesShort(interval)
-        : `${interval / 1000}ms`;
+        : `${interval / 1000}毫秒`;
 
     return (
         <div className="textbox title">
             <Head>
                 <title>
-                    {title} @ {startTimeStr} {startDateStr} | spark
+                    {title} @ 于{startTimeStr} {startDateStr} | spark
                 </title>
             </Head>
             <span>
                 {comment}
                 <Avatar user={user} platform={metadata.platform} />
-                {user?.name} @ {startTimeStr} {startDateStr}, interval{' '}
+                {user?.name} @ {startTimeStr} {startDateStr}, 间隔{' '}
                 {formattedInterval}
                 {ticksOver}
             </span>

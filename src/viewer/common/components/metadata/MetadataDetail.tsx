@@ -20,6 +20,19 @@ interface MetadataDetailProps {
     metadata: SparkMetadata;
 }
 
+// 创建显示名称映射
+const VIEW_NAMES: Record<string, string> = {
+    'Platform': '平台',
+    'Memory': '内存',
+    'Network': '网络',
+    'JVM Flags': 'JVM参数',
+    'Configurations': '配置',
+    'World': '世界',
+    'Misc': '其他',
+    'Game Rules': '游戏规则',
+    'Plugins/Mods': '插件/模组'
+};
+
 export default function MetadataDetail({ metadata }: MetadataDetailProps) {
     const {
         platform,
@@ -95,7 +108,8 @@ export default function MetadataDetail({ metadata }: MetadataDetailProps) {
                                     view === name ? 'toggled' : undefined
                                 }
                             >
-                                {name}
+                                {/* 使用映射显示中文 */}
+                                {VIEW_NAMES[name] || name}
                             </div>
                         )
                     );
@@ -144,7 +158,7 @@ export default function MetadataDetail({ metadata }: MetadataDetailProps) {
                 ) : view === 'Misc' ? (
                     <ExtraPlatformMetadata data={parsedExtraMetadata!} />
                 ) : (
-                    <p>Unknown view.</p>
+                    <p>未知视图。</p>
                 )}
             </div>
         </div>

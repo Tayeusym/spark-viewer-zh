@@ -32,28 +32,23 @@ export default function PlatformStatistics({
     return (
         <>
             <p>
-                The {platformType === 'application' ? 'system' : 'platform'} is
-                a <span>{platform.brand || platform.name}</span> {platformType}{' '}
-                running {platformType === 'application' ? 'spark' : ''} version
-                &quot;
-                <span>{platform.version}</span>&quot;.
+                该{platformType === '应用' ? '服务器' : '平台'}运行的是 <span>{platform.brand || platform.name}</span> {platformType}{' '}
+                ，所运行的{platformType === '应用' ? 'spark' : ''}版本是&quot;<span>{platform.version}</span>&quot;。
             </p>
             {platform.minecraftVersion && (
                 <p>
-                    The detected Minecraft version is &quot;
-                    <span>{platform.minecraftVersion}</span>&quot;.
+                    所检测到的Minecraft 版本是 &quot;
+                    <span>{platform.minecraftVersion}</span>&quot;。
                 </p>
             )}
             {onlineMode && (
                 <p>
-                    The {platformType} is running in <span>{onlineMode}</span>.
+                    {platformType}在<span>{onlineMode}</span>模式下运行。
                 </p>
             )}
             {platformStatistics?.playerCount > 0 && (
                 <p>
-                    The {platformType} had a player count of{' '}
-                    <span>{platformStatistics.playerCount}</span> when the
-                    profile completed.
+                    在当配置文件完成时，{platformType}所当前的在线玩家数为：<span>{platformStatistics.playerCount}</span>。
                 </p>
             )}
             {!!systemStatistics && (
@@ -61,7 +56,7 @@ export default function PlatformStatistics({
             )}
             {runningTime && (
                 <p>
-                    The profiler{' '}
+                    这个分析器{' '}
                     {engine ? (
                         <>
                             (engine{' '}
@@ -75,19 +70,18 @@ export default function PlatformStatistics({
                     ) : (
                         ''
                     )}
-                    was running for <span>{formatDuration(runningTime)}</span>
+                    运行了 <span>{formatDuration(runningTime)}</span>
                     {!!numberOfTicks && (
                         <>
                             {' '}
-                            (<span>{numberOfTicks}</span> ticks)
+                            (约<span>{numberOfTicks}</span>刻)
                         </>
                     )}
-                    .
+                    。
                     {!!numberOfIncludedTicks && (
                         <>
                             {' '}
-                            <span>{numberOfIncludedTicks}</span> ticks exceeded
-                            the &#39;only ticks over&#39; threshold.
+                            <span>{numberOfIncludedTicks}</span> 刻超过了&#39;仅统计超过阈值的刻&#39;的阈值。
                         </>
                     )}
                 </p>
@@ -104,33 +98,31 @@ const SystemStatistics = ({ systemStatistics }: SystemStatisticsProps) => {
     return (
         <>
             <p>
-                The system is running <span>{systemStatistics.os!.name}</span> (
-                <span>{systemStatistics.os!.arch}</span>) version &quot;
-                <span>{systemStatistics.os!.version}</span>&quot; and has{' '}
-                <span>{systemStatistics.cpu!.threads}</span> CPU threads
-                available.
+                系统正在运行 <span>{systemStatistics.os!.name}</span> (
+                <span>{systemStatistics.os!.arch}</span>) ，版本为&quot;
+                <span>{systemStatistics.os!.version}</span>&quot;，并且有{' '}
+                <span>{systemStatistics.cpu!.threads}</span> 个CPU线程可用。
             </p>
             {systemStatistics.cpu!.modelName && (
                 <p>
-                    The CPU is described as an{' '}
-                    <span>{systemStatistics.cpu!.modelName}</span>.
+                    这个CPU描述为：{' '}
+                    <span>{systemStatistics.cpu!.modelName}</span>。
                 </p>
             )}
             <p>
-                The process is using Java{' '}
+                该进程正在使用{' '}
                 <span>{systemStatistics.java!.version}</span> (
-                <span>{systemStatistics.java!.vendorVersion}</span> from{' '}
-                <span>{systemStatistics.java!.vendor}</span>).
+                <span>{systemStatistics.java!.vendorVersion}</span> 的{' '}
+                <span>{systemStatistics.java!.vendor}</span>)。
                 {systemStatistics.jvm?.name && (
                     <>
                         {' '}
-                        The JVM is a <span>{systemStatistics.jvm?.name}</span>.
+                        JVM 是 <span>{systemStatistics.jvm?.name}</span>。
                     </>
                 )}
             </p>
             <p>
-                The current process uptime is{' '}
-                <span>{formatDuration(systemStatistics.uptime)}</span>.
+                当前进程的运行时间为 <span>{formatDuration(systemStatistics.uptime)}</span>。
             </p>
         </>
     );

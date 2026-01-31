@@ -26,7 +26,7 @@ export default function DiskWidget({ disk }: DiskWidgetProps) {
     };
 
     return (
-        <Widget title="Disk" formatter={formatter}>
+        <Widget title="磁盘" formatter={formatter}>
             <WidgetSingleValue value={disk.used} total={disk.total} />
         </Widget>
     );

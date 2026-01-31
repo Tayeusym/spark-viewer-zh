@@ -28,12 +28,12 @@ export default function Changelog() {
     if (status !== Status.ERROR) {
         content = <ChangelogPage info={info} />;
     } else {
-        content = <TextBox>Error: unable to get changelog.</TextBox>;
+        content = <TextBox>错误：无法获取日志。</TextBox>;
     }
 
     return (
         <article className={styles.changelog}>
-            <h1>Changelog</h1>
+            <h1>最近更改（英文）</h1>
             {content}
         </article>
     );
@@ -44,15 +44,10 @@ const ChangelogPage = ({ info }: { info?: ChangelogData }) => {
     return (
         <>
             <p>
-                The list below shows the most recent changes committed to the{' '}
-                <a href="https://github.com/lucko/spark">
-                    spark Git repository
-                </a>
-                .
+                以下列表显示了最近提交到 <a href="https://github.com/lucko/spark" target="_blank">Spark</a> 的Git仓库的最近更改。
             </p>
             <p>
-                Go to the <Link href={'download'}>downloads</Link> page to get
-                the latest version.
+                <Link href={'download'}>请到下载页</Link>，下载spark的最新版本。
             </p>
             <br />
             <ChangelogList entries={changelog} />
