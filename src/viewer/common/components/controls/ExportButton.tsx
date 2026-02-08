@@ -14,7 +14,7 @@ export default function ExportButton({ exportCallback }: ExportButtonProps) {
         <FaButton
             icon={faFileExport}
             onClick={exportCallback}
-            title="Export this profile to a local file"
+            title="将此配置文件导出为本地文件"
         />
     );
 }
