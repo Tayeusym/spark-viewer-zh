@@ -24,9 +24,9 @@ export default function SocketInfo({ socket }: SocketInfoProps) {
                 {settings?.statisticsInterval ?? '?'} 秒更新一次，性能分析数据每分钟更新一次。
             </p>
             <p>
-                <b>延迟：</b>: {latency ?? '?'}毫秒
+                <b>延迟：</b>{latency ?? '?'}毫秒
                 <br />
-                <b>客户端ID：</b>: {clientId}
+                <b>客户端ID：</b>{clientId}
             </p>
         </TextBox>
     );
