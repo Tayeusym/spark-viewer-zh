@@ -2,7 +2,8 @@
 
 以下文本是中文汉化。整个项目的中文汉化尽可能准确但不确保情况，如有问题请在issues用中文提出。
 
-注意：由于站长对bytesocks的修改有点问题（我不会，改了大量Nginx的配置文件还是错误），本项目的WebScocket服务将无法正常使用，因此只能作为普通使用。如果您知道这是什么原因，还请在issues中使用中文向我说明。
+
+由于WebScocket服务需要配合用户客户端/服务端/节点使用，直接打开本地文件的情况下在控制台可能会报错。这可能属正常现象。如果仍然有问题，请在[issues](https://github.com/Tayeusym/spark-viewer-zh/issues)提出。
 
 # spark 查看器（spark-viewer）
 
