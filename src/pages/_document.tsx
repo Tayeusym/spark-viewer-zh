@@ -11,17 +11,16 @@ export default function Document() {
                 <meta name="theme-color" content="#FFC93A" />
                 <meta
                     name="description"
-                    content="spark is a performance profiler for Minecraft clients, servers, and proxies."
+                    content="spark是一个用于 Minecraft 客户端、服务器和代理的性能分析工具。"
                 />
                 <link
-                    href="/assets/logo-inverted-512.png"
+                    href="https://tayemcser.cn/Saylor.jpg"
                     rel="shortcut icon"
-                    sizes="512x512"
                     type="image/png"
                 />
                 <link
                     rel="apple-touch-icon"
-                    href="/assets/logo-inverted-160.png"
+                    href="https://tayemcser.cn/Saylor.jpg"
                 />
 
                 {host === 'spark.lucko.me' && (
