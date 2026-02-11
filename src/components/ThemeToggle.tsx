@@ -8,12 +8,12 @@ export default function ThemeToggle() {
     const [theme, setTheme] = useContext(ThemeContext);
     return (
         <button
-            className={styles['theme-toggle']}
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            title={`${theme} mode`}
-            aria-label={`Switch between dark and light mode (currently ${theme} mode)`}
-        >
-            <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} />
-        </button>
+    className={styles['theme-toggle']}
+    onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+    title={theme === 'dark' ? '深色模式' : '浅色模式'}
+    aria-label={`Switch between dark and light mode (currently ${theme} mode)`}
+>
+    <FontAwesomeIcon icon={theme === 'dark' ? faMoon : faSun} />
+</button>
     );
 }

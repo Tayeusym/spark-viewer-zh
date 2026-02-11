@@ -44,8 +44,8 @@ const Navigation = () => {
             <Link title="下载" icon={faArrowCircleDown} url="download">
                 下载新版本的spark。
             </Link>
-            <Link title="文档（英文）" icon={faBook} url="docs">
-                阅读文档和使用指南。之后我们会汉化它。
+            <Link title="文档" icon={faBook} url="docs">
+                阅读文档和使用指南。
             </Link>
         </nav>
     );

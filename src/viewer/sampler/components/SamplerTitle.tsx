@@ -37,13 +37,13 @@ export default function SamplerTitle({ metadata }: SamplerTitleProps) {
         <div className="textbox title">
             <Head>
                 <title>
-                    {title} @ 于{startTimeStr} {startDateStr} | spark
+                    {title} @ 创建于{startDateStr} {startTimeStr} | spark
                 </title>
             </Head>
             <span>
                 {comment}
                 <Avatar user={user} platform={metadata.platform} />
-                {user?.name} @ {startTimeStr} {startDateStr}, 间隔{' '}
+                {user?.name} @ 创建于{startDateStr} {startTimeStr}，间隔{' '}
                 {formattedInterval}
                 {ticksOver}
             </span>

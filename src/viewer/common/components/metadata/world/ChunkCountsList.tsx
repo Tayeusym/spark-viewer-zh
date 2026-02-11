@@ -21,12 +21,12 @@ export default function ChunkCountsList({ chunks }: ChunkCountsListProps) {
                             {chunk.x}, {chunk.z}
                         </span>{' '}
                         ({chunk.totalEntities}{' '}
-                        {chunk.totalEntities === 1 ? 'entity' : 'entities'})
+                        {chunk.totalEntities === 1 ? '实体' : '实体'})
                     </li>
                 ))}
                 {more > 0 && (
                     <li style={{ listStyleType: 'none' }}>
-                        ... and {more} more
+                        ...以及还有 {more} 个
                     </li>
                 )}
             </ul>
