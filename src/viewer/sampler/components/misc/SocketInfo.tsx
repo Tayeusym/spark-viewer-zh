@@ -15,8 +15,7 @@ export default function SocketInfo({ socket }: SocketInfoProps) {
     return (
         <TextBox extraClassName={styles['socket-info']}>
             <h2>
-                <FontAwesomeIcon icon={faCloud} color="#89d753" />{' '}
-                已通过<b>WebSocket</b>连接
+                <FontAwesomeIcon icon={faCloud} /> 已通过<b>WebSocket</b>连接
             </h2>
             <p>
                 spark 查看器已经通过套接字与spark分析器建立连接。<br />
