@@ -12,7 +12,7 @@ export interface InfoPointsData {
 }
 
 async function fetchData(): Promise<InfoPointsData> {
-    const resp = await fetch('https://spark-infopoints.lucko.me/points.json');
+    const resp = await fetch('https://spark-infopoints.futuresaylor.cn/points.json');
     return await resp.json();
 }
 
